@@ -1,0 +1,26 @@
+{
+  "name": "user-auth",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Reddonut-cyber <akhowsuk@gmail.com>",
+  "homepage": "https://github.com/Reddonut-cyber/Clone-Project#readme",
+  "license": "ISC",
+  "main": "lib/user-auth.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reddonut-cyber/Clone-Project.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/user-auth.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Reddonut-cyber/Clone-Project/issues"
+  }
+}
