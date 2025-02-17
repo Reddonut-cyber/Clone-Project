@@ -18,6 +18,7 @@
     "url": "git+https://github.com/Reddonut-cyber/Clone-Project.git"
   },
   "scripts": {
+    "tsc": "tsc",
     "test": "node ./__tests__/cart.test.js"
   },
   "bugs": {
