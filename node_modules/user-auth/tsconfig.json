@@ -1,0 +1,13 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../dist/packages/user-auth",
+        "rootDir": "./src",
+        "declaration": true,
+        "declarationMap": true,
+        "composite": true
+    },
+    "references": [
+        { "path": "../user-auth-model" }
+    ]
+}
