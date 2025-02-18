@@ -10,6 +10,7 @@
     "typescript": "^5.7.3"
   },
   "scripts": {
-    "publish": "lerna run tsc"
+    "publish": "lerna run tsc",
+    "boost": "lerna booststrap"
   }
 }
