@@ -23,5 +23,8 @@
   },
   "bugs": {
     "url": "https://github.com/Reddonut-cyber/Clone-Project/issues"
+  },
+  "dependencies": {
+    "user-auth": "*"
   }
 }

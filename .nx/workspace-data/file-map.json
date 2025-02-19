@@ -1,0 +1,156 @@
+{
+  "version": "6.0",
+  "nxVersion": "20.4.5",
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "lerna.json",
+        "hash": "1841662996297644301"
+      },
+      {
+        "file": "nx.json",
+        "hash": "4718829431469826420"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "3172762384716852205"
+      },
+      {
+        "file": "package.json",
+        "hash": "3407121691946517998"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "16903184325145375555"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "2193587728719057077"
+      }
+    ],
+    "projectFileMap": {
+      "user-auth": [
+        {
+          "file": "packages/user-auth/README.md",
+          "hash": "7589808300014398919"
+        },
+        {
+          "file": "packages/user-auth/__tests__/user-auth.test.js",
+          "hash": "3854668218809690127"
+        },
+        {
+          "file": "packages/user-auth/lib/user-auth.d.ts",
+          "hash": "10722271362476705141"
+        },
+        {
+          "file": "packages/user-auth/lib/user-auth.js",
+          "hash": "8831246614953701338"
+        },
+        {
+          "file": "packages/user-auth/lib/user-auth.js.map",
+          "hash": "17123360556010760433"
+        },
+        {
+          "file": "packages/user-auth/package.json",
+          "hash": "10084662952916054666"
+        },
+        {
+          "file": "packages/user-auth/src/user-auth.js",
+          "hash": "4469764048262876761"
+        },
+        {
+          "file": "packages/user-auth/src/user-auth.ts",
+          "hash": "8807549662693935192"
+        },
+        {
+          "file": "packages/user-auth/tsconfig.json",
+          "hash": "3263960226136581883"
+        }
+      ],
+      "order": [
+        {
+          "file": "packages/order/README.md",
+          "hash": "8589630004779369852"
+        },
+        {
+          "file": "packages/order/__tests__/order.test.js",
+          "hash": "15826918623424109836"
+        },
+        {
+          "file": "packages/order/lib/order.d.ts",
+          "hash": "657491257065792868"
+        },
+        {
+          "file": "packages/order/lib/order.js",
+          "hash": "17214974957009108018"
+        },
+        {
+          "file": "packages/order/lib/order.js.map",
+          "hash": "17925450069396137645"
+        },
+        {
+          "file": "packages/order/package.json",
+          "hash": "11723955478595437439",
+          "deps": [
+            "user-auth"
+          ]
+        },
+        {
+          "file": "packages/order/src/order.js",
+          "hash": "4469764048262876761"
+        },
+        {
+          "file": "packages/order/src/order.ts",
+          "hash": "1551293337286047335"
+        },
+        {
+          "file": "packages/order/tsconfig.json",
+          "hash": "3263960226136581883"
+        }
+      ],
+      "cart": [
+        {
+          "file": "packages/cart/README.md",
+          "hash": "14662098304903574445"
+        },
+        {
+          "file": "packages/cart/__tests__/cart.test.js",
+          "hash": "7645109218235808287"
+        },
+        {
+          "file": "packages/cart/lib/cart.d.ts",
+          "hash": "16860714500769005793"
+        },
+        {
+          "file": "packages/cart/lib/cart.js",
+          "hash": "1903940705799896438"
+        },
+        {
+          "file": "packages/cart/lib/cart.js.map",
+          "hash": "10731428322718902236"
+        },
+        {
+          "file": "packages/cart/package.json",
+          "hash": "7395102125718417536",
+          "deps": [
+            "user-auth"
+          ]
+        },
+        {
+          "file": "packages/cart/src/cart.js",
+          "hash": "1797476859491910275"
+        },
+        {
+          "file": "packages/cart/src/cart.ts",
+          "hash": "939079384302134425"
+        },
+        {
+          "file": "packages/cart/tsconfig.json",
+          "hash": "3263960226136581883"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "targetDefaults": {
+    "tsc": {
+      "dependsOn": []
+    },
+    "test": {
+      "dependsOn": []
+    }
+  }
+}
