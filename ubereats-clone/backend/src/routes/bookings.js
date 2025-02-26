@@ -1,39 +1,49 @@
 const express = require("express");
 const router = express.Router();
+const Booking = require("../models/Booking");
+const Restaurant = require("../models/Restaurant");
 
-// Mock database
-let bookings = [];
+// 📌 Create Booking (จองโต๊ะร้านอาหาร)
+router.post("/", async (req, res) => {
+    try {
+        const { restaurantId, userId, date, time, tableNumber } = req.body;
 
-// 📌 Create Booking
-router.post("/", (req, res) => {
-    const { roomId, userId, date, time } = req.body;
-    const newBooking = {
-        id: bookings.length + 1,
-        roomId,
-        userId,
-        date,
-        time,
-    };
-    bookings.push(newBooking);
-    res.status(201).json({ message: "Booking created", booking: newBooking });
+        // ตรวจสอบว่าร้านอาหารมีอยู่จริงหรือไม่
+        const restaurant = await Restaurant.findById(restaurantId);
+        if (!restaurant) return res.status(404).json({ message: "Restaurant not found" });
+
+        // ตรวจสอบว่าโต๊ะมีอยู่จริงหรือไม่
+        if (tableNumber > restaurant.tables || tableNumber < 1) {
+            return res.status(400).json({ message: "Invalid table number" });
+        }
+
+        // บันทึกการจอง
+        const booking = new Booking({ restaurant: restaurantId, userId, date, time, tableNumber });
+        await booking.save();
+        res.status(201).json({ message: "Table booked successfully", booking });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
 // 📌 Get All Bookings
-router.get("/", (req, res) => {
-    res.json(bookings);
-});
-
-// 📌 Get Single Booking
-router.get("/:id", (req, res) => {
-    const booking = bookings.find((b) => b.id === parseInt(req.params.id));
-    if (!booking) return res.status(404).json({ message: "Booking not found" });
-    res.json(booking);
+router.get("/", async (req, res) => {
+    try {
+        const bookings = await Booking.find().populate("restaurant");
+        res.json(bookings);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
 // 📌 Cancel Booking
-router.delete("/:id", (req, res) => {
-    bookings = bookings.filter((b) => b.id !== parseInt(req.params.id));
-    res.json({ message: "Booking cancelled" });
+router.delete("/:id", async (req, res) => {
+    try {
+        await Booking.findByIdAndDelete(req.params.id);
+        res.json({ message: "Booking cancelled" });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
 module.exports = router;

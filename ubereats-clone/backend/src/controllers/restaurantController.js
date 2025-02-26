@@ -3,18 +3,22 @@ const Restaurant = require("../models/Restaurant");
 // เพิ่มร้านอาหารใหม่
 exports.createRestaurant = async (req, res) => {
   try {
-    const { name, description, location } = req.body;
+    const { name, description, location, tables } = req.body; // ✅ ต้องมี tables
+
     const newRestaurant = await Restaurant.create({
       name,
       description,
       location,
+      tables, // ✅ ต้องมี tables
       owner: req.user.id,
     });
+
     res.status(201).json({ message: "Restaurant created", restaurant: newRestaurant });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
+
 
 // ดึงร้านอาหารทั้งหมด
 exports.getAllRestaurants = async (req, res) => {
